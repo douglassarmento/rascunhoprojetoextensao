@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dashboard</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="charts.js"></script>
+
+        <!-- Essa parte dentro do head serve para linkar a fonte das tabelas, apenas isso. -->
+
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Dashboard</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Gráficos</li>
+                        </ol>
+
+                        <!-- AQUI COMEÇAM OS GRAFICOS-->
+
+                        <!-- Gráfico 1 -->
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <canvas id="chart_div" style="height: 200px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <!-- Gráfico 2 -->
+
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <canvas id="piechart" style="height: 200px;"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <script>
+
+                            // Exemplo de dados iniciais para o gráfico de linha (chart_div)
+                            var lineChartData = {
+                                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+                                datasets: [{
+                                    label: 'Número de casos',
+                                    data: [30, 40, 25, 45, 35],
+                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    borderWidth: 2,
+                                    fill: false
+                                }]
+                            };
+                    
+                            // Exemplo de dados iniciais para o gráfico de pizza (piechart)
+                            var pieChartData = {
+                                labels: ['Vermelho', 'Azul', 'Verde'],
+                                datasets: [{
+                                    data: [30, 20, 50],
+                                    backgroundColor: ['red', 'blue', 'green']
+                                }]
+                            };
+                    
+                            // Configuração do gráfico
+                            var chartOptions = {
+                                responsive: true,
+                                maintainAspectRatio: false
+                            };
+                    
+                            // Crie instâncias dos gráficos
+                            var lineCtx = document.getElementById('chart_div').getContext('2d');
+                            var lineChart = new Chart(lineCtx, {
+                                type: 'line',
+                                data: lineChartData,
+                                options: chartOptions
+                            });
+                    
+                            var pieCtx = document.getElementById('piechart').getContext('2d');
+                            var pieChart = new Chart(pieCtx, {
+                                type: 'pie',
+                                data: pieChartData,
+                                options: chartOptions
+                            });
+                    
+                            // Função para atualizar os dados do gráfico de linha em loop
+                            function updateLineChart() {
+                                var updatedData = {
+                                    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+                                    datasets: [{
+                                        label: 'Número de casos',
+                                        data: [40, 35, 50, 30, 60],
+                                        borderColor: 'rgba(75, 192, 192, 1)',
+                                        borderWidth: 2,
+                                        fill: false
+                                    }]
+                                };
+                    
+                                // Atualize os dados do gráfico de linha para adicionar animação
+                                lineChart.data = updatedData;
+                                lineChart.update();
+                    
+                                // Agende a próxima atualização após um intervalo de tempo
+                                setTimeout(updateLineChart, 3000); // Atualize a cada 3 segundos
+                            }
+                    
+                            // Função para atualizar os dados do gráfico de pizza em loop
+                            function updatePieChart() {
+                                var updatedData = {
+                                    labels: ['Óbito', 'Estável', 'Recuperação'],
+                                    datasets: [{
+                                        data: [20, 30, 40],
+                                        backgroundColor: ['red', 'blue', 'green']
+                                    }]
+                                };
+                    
+                                // Atualize os dados do gráfico de pizza para adicionar animação
+                                pieChart.data = updatedData;
+                                pieChart.update();
+                    
+                                // Agende a próxima atualização após um intervalo de tempo
+                                setTimeout(updatePieChart, 3000); // Atualize a cada 3 segundos
+                            }
+                    
+                            // Inicie os loops de atualização para ambos os gráficos
+                            updateLineChart();
+                            updatePieChart();
+                    
+                        </script>
+                        </div>                        
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-area me-1"></i>
+                                        Tabela Estática 1
+                                    </div>
+                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Tabela Estática 2
+                                    </div>
+                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Planilha
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                
+                                <!-- Essa parte está vazia, pois seria utilizada para adicionar a planilha.-->
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+
+        <!-- Dados da tabela -->
+
+        <script type="text/javascript">
+            google.charts.load('current', {
+                packages: ['corechart', 'bar']
+            });
+            google.charts.setOnLoadCallback(drawAxisTickColors);
+        
+            function drawAxisTickColors() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('number', 'X');
+                data.addColumn('number', 'Y');
+                data.addColumn('number', 'Z');
+        
+                data.addRows([
+                    [{
+                        v: [10, 0, 0],
+                        f: '10'
+                    }, 1, .25],
+                    // Adicione o restante de suas linhas de dados aqui
+                ]);
+        
+                var options = {
+                    title: 'Teste',
+                    focusTarget: 'category',
+                    hAxis: {
+                        // Suas opções de hAxis
+                    },
+                    vAxis: {
+                        // Suas opções de vAxis
+                    }
+                };
+        
+                var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+
+        <!-- Dados da tabela -->
+
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+          
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+                ['A', 10],
+                ['B', 11],
+                ['C', 2],
+                ['D', 2],
+                ['E', 2],
+                ['F', 7]
+              ]);
+          
+              var options = {
+                title: 'Teste'
+              };
+          
+              var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          
+              chart.draw(data, options);
+            }
+          </script>
+        
+        <!-- Percebam que este campo possui tags script. Esse espaço é onde se colocam os códigos do google charts. Existem outros que são colocados no head do html com a ideia de "chamar" ou "linkar" o endereço da tabela específica. É como com o CSS, usa-se apenas uma citação para chamar o bloco de código que está em outro campo. A diferença é que você vai colocar a fonte dele na cabeça do código, depois irá colocar as configurações dentro das divs e o seu código propriamente no final entre as tags scripts. Analisem o código e notem que existem algumas tags scripts, uma para cada tabela.-->
+          
+    </body>
+</html>
